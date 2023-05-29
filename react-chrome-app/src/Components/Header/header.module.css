@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    border-bottom: 1px solid var(--heading-color);
+}
+
+.header .header__title {
+    margin-right: 1em;
+}
+
+.header .header__version {
+    font-size: 0.75rem;
+    font-style: italic;
+}

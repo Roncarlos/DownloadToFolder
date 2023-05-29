@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: "./src/index.tsx",
@@ -34,6 +35,18 @@ module.exports = {
     },
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, "..", "extension", "popup", "build"),
+        path: path.resolve(__dirname, "..", "extension", "build"),
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./index.html",
+            filename: "index.html",
+        }),
+    ],
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000,
+    },
+
 };
